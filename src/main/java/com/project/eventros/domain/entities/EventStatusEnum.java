@@ -1,4 +1,4 @@
-package com.project.eventros.domain;
+package com.project.eventros.domain.entities;
 
 public enum EventStatusEnum {
     DRAFT,CANCELLED,PUBLISHED,COMPLETED

@@ -1,4 +1,4 @@
-package com.project.eventros.domain;
+package com.project.eventros.domain.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
