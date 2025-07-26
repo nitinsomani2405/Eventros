@@ -7,7 +7,7 @@ import com.project.eventros.domain.entities.User;
 import com.project.eventros.exceptions.TicketSoldOutException;
 import com.project.eventros.exceptions.TicketTypeNotFoundException;
 import com.project.eventros.exceptions.UserNotFoundException;
-import com.project.eventros.respositories.TicketRespository;
+import com.project.eventros.respositories.TicketRepository;
 import com.project.eventros.respositories.TicketTypeRespository;
 import com.project.eventros.respositories.UserRepository;
 import com.project.eventros.services.QrCodeService;
@@ -24,7 +24,7 @@ public class TicketTypeServiceImpl implements TicketTypeService {
 
     private final UserRepository userRepository;
     private final TicketTypeRespository ticketTypeRespository;
-    private final TicketRespository ticketRespository;
+    private final TicketRepository ticketRepository;
     private final QrCodeService qrCodeService;
 
 
@@ -42,7 +42,7 @@ public class TicketTypeServiceImpl implements TicketTypeService {
                         String.format("Ticket type with Id"+ ticketTypeId+"not found")
                 )
         );
-        int purchasedTickets= ticketRespository.countByTicketTypeId(ticketType.getId());
+        int purchasedTickets= ticketRepository.countByTicketTypeId(ticketType.getId());
         Integer totalAvailable = ticketType.getTotalAvailable();
         if(purchasedTickets+1>totalAvailable){
             throw new TicketSoldOutException();
@@ -51,9 +51,9 @@ public class TicketTypeServiceImpl implements TicketTypeService {
         ticket.setStatus(TicketStatusEnum.PURCHASED);
         ticket.setTicketType(ticketType);
         ticket.setPurchaser(user);
-        Ticket savedTicket=ticketRespository.save(ticket);
+        Ticket savedTicket= ticketRepository.save(ticket);
 
         qrCodeService.generateQrCode(savedTicket);
-        return ticketRespository.save(savedTicket);
+        return ticketRepository.save(savedTicket);
     }
 }
