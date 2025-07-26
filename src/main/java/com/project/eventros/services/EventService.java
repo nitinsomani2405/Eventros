@@ -3,6 +3,9 @@ package com.project.eventros.services;
 import com.project.eventros.domain.CreateEventRequest;
 import com.project.eventros.domain.UpdateEventRequest;
 import com.project.eventros.domain.entities.Event;
+import com.project.eventros.domain.entities.EventStatusEnum;
+import com.project.eventros.domain.entities.QrCode;
+import com.project.eventros.domain.entities.Ticket;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -17,4 +20,14 @@ public interface EventService {
     Optional<Event> getEventForOrganizer(UUID organizerId, UUID eventId);
 
     Event updateEventForOrganizer(UUID organizerId, UUID eventId, UpdateEventRequest event);
+
+    void deleteEventForOrganizer(UUID organizerId, UUID eventId);
+
+    Page<Event>listPublishedEvents(Pageable pageable);
+
+    Page<Event> searchPublishedEvents(String query, Pageable pageable);
+
+    Optional<Event> getPublishedEvent(UUID id)  ;
+
+
 }

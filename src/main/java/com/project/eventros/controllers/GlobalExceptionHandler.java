@@ -2,10 +2,7 @@ package com.project.eventros.controllers;
 
 
 import com.project.eventros.domain.dtos.ErrorDto;
-import com.project.eventros.exceptions.EventNotFoundException;
-import com.project.eventros.exceptions.EventUpdateException;
-import com.project.eventros.exceptions.TicketTypeNotFoundException;
-import com.project.eventros.exceptions.UserNotFoundException;
+import com.project.eventros.exceptions.*;
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -85,7 +82,30 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorDto> handleEventUpdateException(EventUpdateException exception) {
         log.error("EventUpdate Exception Caught", exception);
         ErrorDto errorDto=new ErrorDto();
-        errorDto.setError("exception due to event update");
+        errorDto.setError("unable to update event ");
+        return new ResponseEntity<>(errorDto, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(QrCodeGenerationException.class)
+    public ResponseEntity<ErrorDto> handleQrCodeGenerationException(QrCodeGenerationException exception) {
+        log.error("QrCode Generation Exception Caught", exception);
+        ErrorDto errorDto=new ErrorDto();
+        errorDto.setError("unable to generate qr code");
+        return new ResponseEntity<>(errorDto, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(QrCodeNotFoundException.class)
+    public ResponseEntity<ErrorDto> handleQrCodeNotFoundException(QrCodeNotFoundException exception) {
+        log.error("QrCode found Exception Caught", exception);
+        ErrorDto errorDto=new ErrorDto();
+        errorDto.setError("unable to find qr code");
+        return new ResponseEntity<>(errorDto, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+    @ExceptionHandler(TicketSoldOutException.class)
+    public ResponseEntity<ErrorDto> handleTicketSoldOutException(TicketSoldOutException exception) {
+        log.error("Ticket Sold Out Exception Caught", exception);
+        ErrorDto errorDto=new ErrorDto();
+        errorDto.setError("ticket sold out for this ticket type");
         return new ResponseEntity<>(errorDto, HttpStatus.BAD_REQUEST);
     }
 }
