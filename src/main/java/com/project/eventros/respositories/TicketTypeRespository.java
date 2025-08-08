@@ -1,7 +1,6 @@
 package com.project.eventros.respositories;
 
-import com.project.eventros.domain.entities.Ticket;
-import com.project.eventros.domain.entities.TicketType;
+import com.project.eventros.entities.TicketType;
 import jakarta.persistence.LockModeType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Lock;

@@ -1,12 +1,12 @@
 package com.project.eventros.mapper;
 
-import com.project.eventros.domain.CreateEventRequest;
-import com.project.eventros.domain.CreateTicketTypeRequest;
-import com.project.eventros.domain.UpdateEventRequest;
-import com.project.eventros.domain.UpdateTicketTypeRequest;
-import com.project.eventros.domain.dtos.*;
-import com.project.eventros.domain.entities.Event;
-import com.project.eventros.domain.entities.TicketType;
+import com.project.eventros.requests.CreateEventRequest;
+import com.project.eventros.requests.CreateTicketTypeRequest;
+import com.project.eventros.requests.UpdateEventRequest;
+import com.project.eventros.requests.UpdateTicketTypeRequest;
+import com.project.eventros.entities.Event;
+import com.project.eventros.entities.TicketType;
+import com.project.eventros.dtos.*;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 

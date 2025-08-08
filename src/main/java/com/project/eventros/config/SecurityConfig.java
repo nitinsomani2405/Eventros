@@ -21,6 +21,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize->
                         authorize
                                 .requestMatchers(HttpMethod.GET,"/api/v1/published-events/**").permitAll()
+                                .requestMatchers(HttpMethod.POST,"/api/v1/events/{eventId}/ticket-types/{ticketTypeId}/tickets").permitAll()
                                 .requestMatchers("/api/v1/events/**").hasRole("ORGANIZER")
                                 .requestMatchers("/api/v1/ticket-validations/**").hasRole("STAFF")
                                 .anyRequest().authenticated())

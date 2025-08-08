@@ -1,9 +1,9 @@
 package com.project.eventros.controllers;
 
-import com.project.eventros.domain.dtos.TicketValidationRequestDto;
-import com.project.eventros.domain.dtos.TicketValidationResponseDto;
-import com.project.eventros.domain.entities.TicketValidation;
-import com.project.eventros.domain.entities.TicketValidationMethod;
+import com.project.eventros.dtos.TicketValidationRequestDto;
+import com.project.eventros.dtos.TicketValidationResponseDto;
+import com.project.eventros.entities.TicketValidation;
+import com.project.eventros.entities.TicketValidationMethod;
 import com.project.eventros.mapper.TicketValidationMapper;
 import com.project.eventros.services.TicketValidationService;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +22,7 @@ public class TicketValidationController {
     private final TicketValidationMapper ticketValidationMapper;
 
     @PostMapping
-    public ResponseEntity<TicketValidationResponseDto> validateTicket(
+    public ResponseEntity<TicketValidationResponseDto> validateTicket   (
             @RequestBody TicketValidationRequestDto ticketValidationRequestDto
     ) {
         TicketValidationMethod method=ticketValidationRequestDto.getMethod();

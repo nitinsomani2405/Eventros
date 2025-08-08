@@ -1,6 +1,6 @@
 package com.project.eventros.respositories;
 
-import com.project.eventros.domain.entities.Ticket;
+import com.project.eventros.entities.Ticket;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

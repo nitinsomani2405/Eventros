@@ -1,6 +1,6 @@
 package com.project.eventros.services.implementation;
 
-import com.project.eventros.domain.entities.Ticket;
+import com.project.eventros.entities.Ticket;
 import com.project.eventros.respositories.TicketRepository;
 import com.project.eventros.services.TicketService;
 import lombok.RequiredArgsConstructor;

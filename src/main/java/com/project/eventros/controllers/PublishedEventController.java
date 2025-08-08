@@ -1,8 +1,8 @@
 package com.project.eventros.controllers;
 
-import com.project.eventros.domain.dtos.GetPublishedEventDetailsResponseDto;
-import com.project.eventros.domain.dtos.ListPublishedEventResponseDto;
-import com.project.eventros.domain.entities.Event;
+import com.project.eventros.dtos.GetPublishedEventDetailsResponseDto;
+import com.project.eventros.dtos.ListPublishedEventResponseDto;
+import com.project.eventros.entities.Event;
 import com.project.eventros.mapper.EventMapper;
 import com.project.eventros.services.EventService;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +20,7 @@ public class PublishedEventController {
     private final EventService eventService;
     private final EventMapper eventMapper;
 
+    //all published events open api for all roles with pagination and also passes query from search bar as optional
     @GetMapping
     public ResponseEntity<Page<ListPublishedEventResponseDto>>listPublishedEvents(
             @RequestParam(required = false) String q,
@@ -37,6 +38,7 @@ public class PublishedEventController {
         ));
     }
 
+    //particular event details
     @GetMapping("/{eventId}")
     public ResponseEntity<GetPublishedEventDetailsResponseDto> getPublishedEventDetails(
             @PathVariable UUID eventId)

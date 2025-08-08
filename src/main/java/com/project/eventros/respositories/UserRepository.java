@@ -1,6 +1,6 @@
 package com.project.eventros.respositories;
 
-import com.project.eventros.domain.entities.User;
+import com.project.eventros.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

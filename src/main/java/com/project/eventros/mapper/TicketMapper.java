@@ -1,10 +1,10 @@
 package com.project.eventros.mapper;
 
-import com.project.eventros.domain.dtos.GetTicketResponseDto;
-import com.project.eventros.domain.dtos.ListTicketResponseDto;
-import com.project.eventros.domain.dtos.ListTicketTicketTypeResponseDto;
-import com.project.eventros.domain.entities.Ticket;
-import com.project.eventros.domain.entities.TicketType;
+import com.project.eventros.dtos.GetTicketResponseDto;
+import com.project.eventros.dtos.ListTicketResponseDto;
+import com.project.eventros.dtos.ListTicketTicketTypeResponseDto;
+import com.project.eventros.entities.Ticket;
+import com.project.eventros.entities.TicketType;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;

@@ -1,6 +1,6 @@
 package com.project.eventros.filters;
 
-import com.project.eventros.domain.entities.User;
+import com.project.eventros.entities.User;
 import com.project.eventros.respositories.UserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

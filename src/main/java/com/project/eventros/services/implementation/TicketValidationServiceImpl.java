@@ -1,6 +1,6 @@
 package com.project.eventros.services.implementation;
 
-import com.project.eventros.domain.entities.*;
+import com.project.eventros.entities.*;
 import com.project.eventros.exceptions.QrCodeNotFoundException;
 import com.project.eventros.exceptions.TicketNotFoundException;
 import com.project.eventros.respositories.QrCodeRepository;
@@ -32,7 +32,7 @@ public class TicketValidationServiceImpl implements TicketValidationService {
 
         Ticket ticket = qrCode.getTicket();
 
-        return ValidateTicket(ticket,TicketValidationMethod.QR_SCAN);
+        return ValidateTicket(ticket, TicketValidationMethod.QR_SCAN);
 
     }
 

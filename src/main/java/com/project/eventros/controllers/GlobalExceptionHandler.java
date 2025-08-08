@@ -1,7 +1,7 @@
 package com.project.eventros.controllers;
 
 
-import com.project.eventros.domain.dtos.ErrorDto;
+import com.project.eventros.dtos.ErrorDto;
 import com.project.eventros.exceptions.*;
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;

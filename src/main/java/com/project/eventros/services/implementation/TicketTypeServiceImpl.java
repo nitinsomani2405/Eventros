@@ -1,9 +1,9 @@
 package com.project.eventros.services.implementation;
 
-import com.project.eventros.domain.entities.Ticket;
-import com.project.eventros.domain.entities.TicketStatusEnum;
-import com.project.eventros.domain.entities.TicketType;
-import com.project.eventros.domain.entities.User;
+import com.project.eventros.entities.Ticket;
+import com.project.eventros.entities.TicketStatusEnum;
+import com.project.eventros.entities.TicketType;
+import com.project.eventros.entities.User;
 import com.project.eventros.exceptions.TicketSoldOutException;
 import com.project.eventros.exceptions.TicketTypeNotFoundException;
 import com.project.eventros.exceptions.UserNotFoundException;

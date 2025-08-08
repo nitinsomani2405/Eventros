@@ -1,12 +1,12 @@
 package com.project.eventros.services.implementation;
 
-import com.project.eventros.domain.CreateEventRequest;
-import com.project.eventros.domain.UpdateEventRequest;
-import com.project.eventros.domain.UpdateTicketTypeRequest;
-import com.project.eventros.domain.entities.Event;
-import com.project.eventros.domain.entities.EventStatusEnum;
-import com.project.eventros.domain.entities.TicketType;
-import com.project.eventros.domain.entities.User;
+import com.project.eventros.requests.CreateEventRequest;
+import com.project.eventros.requests.UpdateEventRequest;
+import com.project.eventros.requests.UpdateTicketTypeRequest;
+import com.project.eventros.entities.Event;
+import com.project.eventros.entities.EventStatusEnum;
+import com.project.eventros.entities.TicketType;
+import com.project.eventros.entities.User;
 import com.project.eventros.exceptions.EventNotFoundException;
 import com.project.eventros.exceptions.EventUpdateException;
 import com.project.eventros.exceptions.TicketTypeNotFoundException;

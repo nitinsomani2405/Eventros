@@ -1,6 +1,6 @@
 package com.project.eventros.services;
 
-import com.project.eventros.domain.entities.TicketValidation;
+import com.project.eventros.entities.TicketValidation;
 
 import java.util.UUID;
 

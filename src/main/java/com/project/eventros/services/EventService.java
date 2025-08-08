@@ -1,11 +1,8 @@
 package com.project.eventros.services;
 
-import com.project.eventros.domain.CreateEventRequest;
-import com.project.eventros.domain.UpdateEventRequest;
-import com.project.eventros.domain.entities.Event;
-import com.project.eventros.domain.entities.EventStatusEnum;
-import com.project.eventros.domain.entities.QrCode;
-import com.project.eventros.domain.entities.Ticket;
+import com.project.eventros.requests.CreateEventRequest;
+import com.project.eventros.requests.UpdateEventRequest;
+import com.project.eventros.entities.Event;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

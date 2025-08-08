@@ -1,8 +1,7 @@
 package com.project.eventros.services;
 
-import com.project.eventros.domain.entities.QrCode;
-import com.project.eventros.domain.entities.Ticket;
-import org.springframework.stereotype.Service;
+import com.project.eventros.entities.QrCode;
+import com.project.eventros.entities.Ticket;
 
 import java.util.UUID;
 

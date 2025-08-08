@@ -1,10 +1,10 @@
 package com.project.eventros.controllers;
 
 
-import com.project.eventros.domain.CreateEventRequest;
-import com.project.eventros.domain.UpdateEventRequest;
-import com.project.eventros.domain.dtos.*;
-import com.project.eventros.domain.entities.Event;
+import com.project.eventros.requests.CreateEventRequest;
+import com.project.eventros.requests.UpdateEventRequest;
+import com.project.eventros.entities.Event;
+import com.project.eventros.dtos.*;
 import com.project.eventros.mapper.EventMapper;
 import com.project.eventros.services.EventService;
 import jakarta.validation.Valid;
@@ -27,6 +27,8 @@ public class EventController {
     private final EventService eventService;
     private final EventMapper eventMapper;
 
+
+    // creating event by organizer
     @PostMapping
     public ResponseEntity<CreateEventResponseDto>createEvent(
             @AuthenticationPrincipal Jwt jwt
@@ -42,6 +44,7 @@ public class EventController {
         return new ResponseEntity<>(createEventResponseDto, HttpStatus.CREATED);
     }
 
+    //list of all events which are published by particualar orgainzer with pagination
     @GetMapping
     public ResponseEntity<Page<ListEventResponseDto>>listEvents(
             @AuthenticationPrincipal Jwt jwt, Pageable pageable
@@ -53,6 +56,7 @@ public class EventController {
         );
     }
 
+    //fetching particular event
     @GetMapping("/{eventId}")
     public ResponseEntity<GetEventDetailsResponseDto>getEvent(
             @AuthenticationPrincipal Jwt jwt, @PathVariable UUID eventId
@@ -64,6 +68,8 @@ public class EventController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+
+    //updating particular event
     @PutMapping("/{eventId}")
     public ResponseEntity<UpdateEventResponseDto> updateEvent(
             @AuthenticationPrincipal Jwt jwt,
@@ -78,6 +84,7 @@ public class EventController {
         return new ResponseEntity<>(updateEventResponseDto, HttpStatus.OK);
     }
 
+    //deleting event
     @DeleteMapping("/{eventId}")
     public ResponseEntity<Void> deleteEvent(
             @AuthenticationPrincipal Jwt jwt

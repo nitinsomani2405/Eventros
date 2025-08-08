@@ -1,7 +1,6 @@
 package com.project.eventros.services;
 
-import com.project.eventros.domain.entities.Ticket;
-import com.project.eventros.domain.entities.TicketType;
+import com.project.eventros.entities.Ticket;
 
 import java.util.UUID;
 

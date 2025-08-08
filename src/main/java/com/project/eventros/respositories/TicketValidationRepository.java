@@ -1,6 +1,6 @@
 package com.project.eventros.respositories;
 
-import com.project.eventros.domain.entities.TicketValidation;
+import com.project.eventros.entities.TicketValidation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

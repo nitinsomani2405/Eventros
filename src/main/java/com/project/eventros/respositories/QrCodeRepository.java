@@ -1,7 +1,7 @@
 package com.project.eventros.respositories;
 
-import com.project.eventros.domain.entities.QrCode;
-import com.project.eventros.domain.entities.QrCodeStatusEnum;
+import com.project.eventros.entities.QrCode;
+import com.project.eventros.entities.QrCodeStatusEnum;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

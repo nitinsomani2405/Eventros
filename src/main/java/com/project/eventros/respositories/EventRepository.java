@@ -1,8 +1,8 @@
 package com.project.eventros.respositories;
 
-import com.project.eventros.domain.entities.Event;
+import com.project.eventros.entities.Event;
 
-import com.project.eventros.domain.entities.EventStatusEnum;
+import com.project.eventros.entities.EventStatusEnum;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

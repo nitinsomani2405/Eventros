@@ -1,8 +1,7 @@
 package com.project.eventros.controllers;
 
-import com.project.eventros.domain.dtos.GetTicketResponseDto;
-import com.project.eventros.domain.dtos.ListTicketResponseDto;
-import com.project.eventros.domain.entities.Ticket;
+import com.project.eventros.dtos.GetTicketResponseDto;
+import com.project.eventros.dtos.ListTicketResponseDto;
 import com.project.eventros.mapper.TicketMapper;
 import com.project.eventros.services.QrCodeService;
 import com.project.eventros.services.TicketService;
@@ -29,6 +28,7 @@ public class TicketController {
     private final TicketMapper ticketMapper;
     private final QrCodeService qrCodeService;
 
+    //all tickets for user
     @GetMapping
     public Page<ListTicketResponseDto> listTickets(
             @AuthenticationPrincipal Jwt jwt,
@@ -39,6 +39,7 @@ public class TicketController {
 
     }
 
+    //particular ticket of a user
     @GetMapping("/{ticketId}")
     public ResponseEntity<GetTicketResponseDto>getTicket(
             @AuthenticationPrincipal Jwt jwt,
@@ -51,6 +52,8 @@ public class TicketController {
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
+
+
     @GetMapping("/{ticketId}/qr-codes")
     public ResponseEntity<byte[]>getTicketQrCode(
         @AuthenticationPrincipal Jwt jwt,

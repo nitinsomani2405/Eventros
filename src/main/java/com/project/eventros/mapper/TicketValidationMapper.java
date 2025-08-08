@@ -1,7 +1,7 @@
 package com.project.eventros.mapper;
 
-import com.project.eventros.domain.dtos.TicketValidationResponseDto;
-import com.project.eventros.domain.entities.TicketValidation;
+import com.project.eventros.dtos.TicketValidationResponseDto;
+import com.project.eventros.entities.TicketValidation;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
