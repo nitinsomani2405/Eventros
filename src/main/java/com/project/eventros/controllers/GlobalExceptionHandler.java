@@ -43,6 +43,14 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(errorDto, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @ExceptionHandler(EventTicketException.class)
+    public ResponseEntity<ErrorDto> handleEventTicketException(EventTicketException exception) {
+        log.error("EventTicketException Caught", exception);
+        ErrorDto errorDto = new ErrorDto();
+        errorDto.setError(exception.getMessage());
+        return new ResponseEntity<>(errorDto, HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorDto> handleMethodArgumentNotValid(MethodArgumentNotValidException exception) {
         log.error("MethodArgumentNotValidException Caught", exception);
@@ -114,6 +122,22 @@ public class GlobalExceptionHandler {
         ErrorDto errorDto=new ErrorDto();
         errorDto.setError("ticket not found");
         return new ResponseEntity<>(errorDto, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(UserRegistrationException.class)
+    public ResponseEntity<ErrorDto> handleUserRegistrationException(UserRegistrationException exception) {
+        log.error("User Registration Exception Caught", exception);
+        ErrorDto errorDto = new ErrorDto();
+        errorDto.setError(exception.getMessage());
+        return new ResponseEntity<>(errorDto, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(KeycloakAdminException.class)
+    public ResponseEntity<ErrorDto> handleKeycloakAdminException(KeycloakAdminException exception) {
+        log.error("Keycloak Admin Exception Caught", exception);
+        ErrorDto errorDto = new ErrorDto();
+        errorDto.setError("User registration failed: " + exception.getMessage());
+        return new ResponseEntity<>(errorDto, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 

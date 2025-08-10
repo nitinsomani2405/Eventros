@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -11,6 +12,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "qr_codes")
+@EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
 @NoArgsConstructor
@@ -26,7 +28,7 @@ public class QrCode {
     @Enumerated(EnumType.STRING)
     private QrCodeStatusEnum status;
 
-    @Column(name = "value",columnDefinition = "TEXT",nullable = false)
+    @Column(name = "value",columnDefinition = "VARCHAR(MAX)",nullable = false)
     private String value;
 
     @ManyToOne(fetch = FetchType.LAZY)

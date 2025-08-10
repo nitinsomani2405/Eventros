@@ -1,6 +1,7 @@
 package com.project.eventros.config;
 
 import com.project.eventros.filters.UserProvisioningFilter;
+import com.project.eventros.config.JwtAuthenticationConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -22,6 +23,8 @@ public class SecurityConfig {
                         authorize
                                 .requestMatchers(HttpMethod.GET,"/api/v1/published-events/**").permitAll()
                                 .requestMatchers(HttpMethod.POST,"/api/v1/events/{eventId}/ticket-types/{ticketTypeId}/tickets").permitAll()
+                                .requestMatchers(HttpMethod.POST,"/api/v1/signup").permitAll()
+                                .requestMatchers(HttpMethod.GET,"/api/v1/signup/roles").permitAll()
                                 .requestMatchers("/api/v1/events/**").hasRole("ORGANIZER")
                                 .requestMatchers("/api/v1/ticket-validations/**").hasRole("STAFF")
                                 .anyRequest().authenticated())
